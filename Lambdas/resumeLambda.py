@@ -37,7 +37,7 @@ def lambda_handler(event, context):
         #     ":newSkills": blocks[i+1]['Text']
         # },
         # ReturnValues="UPDATED_NEW")
-            dynamo.put_item(Table="candidate_data",Item={'id':{'N': id}, 'skills': {'S': blocks[i+1]['Text']}})
+            dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': blocks[i+1]['Text']}})
 
     return {
         'statusCode': 200,
