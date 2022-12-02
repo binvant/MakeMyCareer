@@ -36,8 +36,6 @@ def lambda_handler(event, context):
     print(type(blocks))
     print(blocks)
     for i in range(len(blocks)):
-        print(blocks[i])
-        print(type(blocks[i]))
         if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS:
             print(blocks[i+1]['Text'])
                 
