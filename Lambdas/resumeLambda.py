@@ -30,8 +30,8 @@ def lambda_handler(event, context):
     })
     print(doc)
     print(type(doc))
-    print(doc['DocumentMetadata'])
-    res = doc['DocumentMetadata']
+    print(doc['Blocks'][0])
+    res = doc['Blocks'][0]['Text']
     print(search(res, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
@@ -40,6 +40,6 @@ def lambda_handler(event, context):
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Allow-Methods': 'POST, OPTIONS'
         },
-        'body': json.dumps(doc)
+        'body': json.dumps("Works")
     }
 
