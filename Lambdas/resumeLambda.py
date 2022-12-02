@@ -35,7 +35,7 @@ def lambda_handler(event, context):
     blocks = doc['Blocks']
     print(type(blocks))
     print(blocks)
-    for i in range(blocks):
+    for i in range(len(blocks)):
         print(blocks[i])
         if blocks[i]['Text'] in SKILLS:
             print(blocks[i+1]['Text'])
