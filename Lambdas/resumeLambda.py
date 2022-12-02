@@ -34,9 +34,11 @@ def lambda_handler(event, context):
     print(len(doc['Blocks']))
     blocks = doc['Blocks']
     print(type(blocks))
+    print(blocks)
     for block in blocks:
-        if SKILLS in block:
-            print('yes')
+        for i in SKILLS:
+            if i in block:
+                print('yes')
     res = doc['Blocks'][0]
     print(search(res, "TECHNICAL SKILLS"))
     return {
