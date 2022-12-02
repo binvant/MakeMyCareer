@@ -3,7 +3,7 @@ phases:
   install:
     runtime-versions:
       python: 3.9
-  commands:
+    commands:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt -t lib
   build:
