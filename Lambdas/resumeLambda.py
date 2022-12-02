@@ -14,11 +14,11 @@ def lambda_handler(event, context):
     ev = bytes(ev, 'utf-8')
     id = table.scan() # get ID
     print(id)
-    id = int(id['Items'][0]['id'])
+    id = str(id['Items'][0]['id'])
     print(id)
     resume = base64.b64decode(ev)
     bucket = 'resume-bucket-bsb'
-    file_path = 'resume' + str(id)
+    file_path = 'resume' + id
     s3 = boto3.client('s3')
     s3.put_object(Bucket=bucket, Key=file_path, Body=resume)
     textract = boto3.client('textract')
@@ -37,7 +37,7 @@ def lambda_handler(event, context):
         #     ":newSkills": blocks[i+1]['Text']
         # },
         # ReturnValues="UPDATED_NEW")
-            dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': blocks[i+1]['Text']}})
+            dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': str(blocks[i+1]['Text'])}})
 
     return {
         'statusCode': 200,
