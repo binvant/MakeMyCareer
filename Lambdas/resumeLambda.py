@@ -30,8 +30,8 @@ def lambda_handler(event, context):
     })
     print(doc)
     print(type(doc))
-    print(doc['DocumentMetadata']['Blocks'][0])
-    res = doc['DocumentMetadata']['Blocks'][0]
+    print(doc['DocumentMetadata'])
+    res = doc['DocumentMetadata']
     print(search(res, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
