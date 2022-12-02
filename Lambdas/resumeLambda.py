@@ -2,6 +2,13 @@ import json
 import boto3
 import io, base64
 
+def search(values, keyword):
+    for k in values:
+        for v in values[k]:
+            if keyword in v:
+                return k
+    return None
+
 def lambda_handler(event, context):
     # TODO implement
     print(event)
@@ -21,12 +28,6 @@ def lambda_handler(event, context):
     })
     print(doc)
     print(type(doc))
-    def search(values, searchFor):
-        for k in values:
-            for v in values[k]:
-                if searchFor in v:
-                    return k
-        return None
     print(search(doc, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
