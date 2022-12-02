@@ -30,7 +30,7 @@ def lambda_handler(event, context):
     })
     blocks = doc['Blocks']
     for i in range(len(blocks)):
-        if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS:
+        if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS and "," in str(blocks[i]['Text']):
             print(blocks[i+1]['Text'])
         #     table2.update_item(Key={"id": id},
         #     UpdateExpression="set skills=:newskills",ExpressionAttributeValues={
