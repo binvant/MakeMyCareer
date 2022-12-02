@@ -36,7 +36,10 @@ def lambda_handler(event, context):
                 temp = dynamo.get_item(TableName="candidate_data", Key={
                 'id': {'N': id}}, AttributesToGet=['name','email', 'password'])
                 print(temp)
-                dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': str(blocks[i+1]['Text'])}})
+                password = str(temp['Item']['password']['S'])
+                email = str(temp['Item']['email']['S'])
+                name = str(temp['Item']['name']['S'])
+                dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'name': {'S': name}, 'email': {'S': email}, 'password': {'S': password}, 'skills': {'S': str(blocks[i+1]['Text'])}})
 
     return {
         'statusCode': 200,
