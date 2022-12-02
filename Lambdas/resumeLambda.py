@@ -34,7 +34,7 @@ def lambda_handler(event, context):
             if str(blocks[i+1]['BlockType']) == "LINE":
                 print(blocks[i+1]['Text'])
                 temp = dynamo.get_item(TableName="candidate_data", Key={
-                'id': {'S': id}}, AttributesToGet=['name','email', 'password'])
+                'id': {'N': id}}, AttributesToGet=['name','email', 'password'])
                 print(temp)
                 dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': str(blocks[i+1]['Text'])}})
 
