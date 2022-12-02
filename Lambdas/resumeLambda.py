@@ -14,11 +14,11 @@ def lambda_handler(event, context):
     ev = bytes(ev, 'utf-8')
     id = table.scan() # get ID
     print(id)
-    id = id['Items'][0]['id']
+    id = int(id['Items'][0]['id'])
     print(id)
     resume = base64.b64decode(ev)
     bucket = 'resume-bucket-bsb'
-    file_path = 'resume' + id
+    file_path = 'resume' + str(id)
     s3 = boto3.client('s3')
     s3.put_object(Bucket=bucket, Key=file_path, Body=resume)
     textract = boto3.client('textract')
