@@ -31,7 +31,12 @@ def lambda_handler(event, context):
     print(doc)
     print(type(doc))
     print(doc['Blocks'][0])
-    res = doc['Blocks'][0]['Text']
+    print(len(doc['Blocks']))
+    blocks = doc['Blocks']
+    for block in blocks:
+        if SKILLS in block:
+            print('yes')
+    res = doc['Blocks'][0]
     print(search(res, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
