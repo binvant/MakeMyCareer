@@ -1,6 +1,8 @@
 import json
 import boto3
 import io, base64
+SKILLS = ["Technical Skills", "Skills", "skills", "Technical skills"]
+
 
 def search(values, keyword):
     for k in values:
@@ -28,7 +30,9 @@ def lambda_handler(event, context):
     })
     print(doc)
     print(type(doc))
-    print(search(doc, "TECHNICAL SKILLS"))
+    print(doc['DocumentMetadata']['Blocks'][0])
+    res = doc['DocumentMetadata']['Blocks'][0]
+    print(search(res, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
         'headers': {
