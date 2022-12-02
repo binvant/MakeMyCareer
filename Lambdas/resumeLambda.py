@@ -35,12 +35,13 @@ def lambda_handler(event, context):
     blocks = doc['Blocks']
     print(type(blocks))
     print(blocks)
-    for block in blocks:
-        for i in SKILLS:
-            if i in block:
-                print('yes')
-    res = doc['Blocks'][0]
-    print(search(res, "TECHNICAL SKILLS"))
+    for i in range(blocks):
+        print(blocks[i])
+        if blocks[i]['Text'] in SKILLS:
+            print(blocks[i+1]['Text'])
+                
+    # res = doc['Blocks'][0]
+    # print(search(res, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
         'headers': {
