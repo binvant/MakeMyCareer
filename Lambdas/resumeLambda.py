@@ -30,14 +30,10 @@ def lambda_handler(event, context):
     })
     blocks = doc['Blocks']
     for i in range(len(blocks)):
-        if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS and "," in str(blocks[i]['Text']):
-            print(blocks[i+1]['Text'])
-        #     table2.update_item(Key={"id": id},
-        #     UpdateExpression="set skills=:newskills",ExpressionAttributeValues={
-        #     ":newSkills": blocks[i+1]['Text']
-        # },
-        # ReturnValues="UPDATED_NEW")
-            dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': str(blocks[i+1]['Text'])}})
+        if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS:
+            if str(blocks[i+1]['BlockType']) == "LINE":
+                print(blocks[i+1]['Text'])
+                dynamo.put_item(TableName="candidate_data", Item={'id':{'N': id}, 'skills': {'S': str(blocks[i+1]['Text'])}})
 
     return {
         'statusCode': 200,
