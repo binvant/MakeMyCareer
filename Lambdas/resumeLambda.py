@@ -37,6 +37,7 @@ def lambda_handler(event, context):
     print(blocks)
     for i in range(len(blocks)):
         if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS:
+            print("Inside if")
             print(blocks[i+1]['Text'])
                 
     # res = doc['Blocks'][0]
