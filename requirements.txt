@@ -1,3 +1,2 @@
-base64
 boto3
 json

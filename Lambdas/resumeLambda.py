@@ -20,6 +20,14 @@ def lambda_handler(event, context):
         }
     })
     print(doc)
+    print(type(doc))
+    def search(values, searchFor):
+        for k in values:
+            for v in values[k]:
+                if searchFor in v:
+                    return k
+        return None
+    print(search(doc, "TECHNICAL SKILLS"))
     return {
         'statusCode': 200,
         'headers': {
