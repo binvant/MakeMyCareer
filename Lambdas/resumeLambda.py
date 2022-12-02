@@ -3,19 +3,18 @@ import boto3
 import io, base64
 SKILLS = ["Technical Skills", "Skills", "skills", "Technical skills", "TECHNICAL SKILLS", "SKILLS", "technical skills"]
 
-
-def search(values, keyword):
-    for k in values:
-        for v in values[k]:
-            if keyword in v:
-                return k
-    return None
-
 def lambda_handler(event, context):
     # TODO implement
+    dynamo_db = boto3.resource('dynamodb')
+    dynamo = boto3.client('dynamodb')
+    table = dynamo_db.Table('sequence')
     print(event)
     ev = event['body-json']
     ev = bytes(ev, 'utf-8')
+    id = table.scan() # get ID
+    print(id)
+    id = id['Items'][0]['id']
+    print(id)
     resume = base64.b64decode(ev)
     bucket = 'resume-bucket-bsb'
     file_path = '/resume'
@@ -28,20 +27,11 @@ def lambda_handler(event, context):
             'Name': '/newwwww_candidate_resume',
         }
     })
-    print(doc)
-    print(type(doc))
-    print(doc['Blocks'][0])
-    print(len(doc['Blocks']))
     blocks = doc['Blocks']
-    print(type(blocks))
-    print(blocks)
     for i in range(len(blocks)):
         if "Text" in blocks[i] and blocks[i]['Text'] in SKILLS:
-            print("Inside if")
             print(blocks[i+1]['Text'])
-                
-    # res = doc['Blocks'][0]
-    # print(search(res, "TECHNICAL SKILLS"))
+
     return {
         'statusCode': 200,
         'headers': {
