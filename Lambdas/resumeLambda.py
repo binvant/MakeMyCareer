@@ -1,7 +1,7 @@
 import json
 import boto3
 import io, base64
-SKILLS = ["Technical Skills", "Skills", "skills", "Technical skills"]
+SKILLS = ["Technical Skills", "Skills", "skills", "Technical skills", "TECHNICAL SKILLS", "SKILLS", "technical skills"]
 
 
 def search(values, keyword):
