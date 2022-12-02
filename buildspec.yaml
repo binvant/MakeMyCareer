@@ -1,0 +1,29 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - cd lib
+      - zip -r9 ../deployment_package_1.zip .
+      - zip -r9 ../deployment_package_2.zip .
+      - cd ..
+      - cd Lambdas
+      - mv createProfile.py ../lambda_function.py
+      - cd ..
+      - zip -r deployment_package_1.zip lambda_function.py
+      - mv lambda_function.py Lambdas/createProfile.py
+      - cd Lambdas
+      - mv resumeLambda.py ../lambda_function.py
+      - cd ..
+      - zip -r deployment_package_2.zip lambda_function.py
+      - mv lambda_function.py Lambdas/resumeLambda.py
+
+  post_build:
+    commands:
+      - echo "Updating lambda Functions..."
+      - aws lambda update-function-code --function-name createProfile --zip-file fileb://deployment_package_1.zip
+      - aws lambda update-function-code --function-name resumeLambda --zip-file fileb://deployment_package_2.zip
+      - echo "DONE!!"
