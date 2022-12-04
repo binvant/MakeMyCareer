@@ -27,6 +27,11 @@ function convertToBase64(selectedFile) {
       return temp;
   }
 }
+
+function render(){
+  window.location.replace("http://makemycareer.s3-website-us-east-1.amazonaws.com/recruitersignup.html")
+}
+
 function signup() {
     let name = $('#name').val();
     let email = $('#mail').val();
