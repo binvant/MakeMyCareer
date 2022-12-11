@@ -2,37 +2,36 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recruiter Sign Up Form</title>
+        <title>Create Job</title>
         <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="style.css">
-        <script src="script-recruiter.js"></script>
+        <script src="script-job-post.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
       <div class="row">
     <form id="file-form">
     <div class="col-md-12 widthcss">
-        <h1> Sign Up </h1>
+        <h1> Create a new Job Posting </h1>
         
         <fieldset>
           
-          <legend>Your Basic Info</legend>
-        
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name">
-        
-          <label for="email">Email:</label>
-          <input type="email" id="mail" name="user_email">
-       
-          <label for="password">Password:</label>
-          <input type="password" id="password"       name="user_password">
+          <legend>Basic Job Info</legend>
+          <label for="Pname">Company Name:</label>
+          <input type="text" id="Cname" name="company_name">
 
-          <label for="password">Confirm Password:</label>
-          <input type="password" id="confirmpassword"       name="user_password">
+          <label for="Pname"> Position Name:</label>
+          <input type="text" id="Pname" name="position_name">
+        
+          <label for="JD"> Job Description:</label>
+          <input type="text" id="JD" name="JD">
+       
+          <label for="skills"> Specific Skills Required:</label>
+          <input type="text" id="skills" name="skills">
           
         </fieldset>
-        <button type="button" onclick="signuprecruiter()">Sign Up</button>
+        <button type="button" onclick="postjob()">Create Job</button>
         </div>
         </form>
       </div>

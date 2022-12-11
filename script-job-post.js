@@ -1,7 +1,7 @@
-function signuprecruiter(){
-    let name = $('#name').val();
-    let email = $('#mail').val();
-    let password = $('#password').val();
+function postjob(){
+    let company_name = $('#Cname').val();
+    let position = $('#Pname').val();
+    let skills = $('#skills').val();
       $.ajax({
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -12,11 +12,11 @@ function signuprecruiter(){
         },
         contentType: "application/json",
         method: "POST",
-        url: "https://jwjkqbwke5.execute-api.us-east-1.amazonaws.com/dev/createrecruiterprofile",
+        url: "https://e3uyya0frh.execute-api.us-east-1.amazonaws.com/dev/createjob",
         data: JSON.stringify({
-            "name": name,
-            "email": email,
-            "password": password
+            "company": company_name,
+            "position": position,
+            "skills": skills
         })
       }).done(function() {
         $(this).addClass( "done" );
