@@ -71,6 +71,8 @@ function resolveUpload(File){
     isBase64Encoded: false
   }).done(function (response) {
       console.log(response);
+      $('#skills').text(response);
+      localStorage.setItem("skills",response);
     });
   }
   function rejectUpload(inp){
