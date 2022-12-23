@@ -16,7 +16,10 @@ function postjob(){
         data: JSON.stringify({
             "company": company_name,
             "position": position,
-            "skills": skills
+            "skills": skills,
+            "recruiter": localStorage.getItem("id"),
+            "job_description": $('#JD').val(),
+            "jobUrl": $('#jobUrl').val()
         })
       }).done(function() {
         $(this).addClass( "done" );

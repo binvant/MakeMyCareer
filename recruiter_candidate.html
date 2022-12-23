@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="profile.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type='module' src="recruiterCandidate.js"></script>
+
+</head>
+<body>
+
+    <div class="row" style="background-color:rgb(9, 7, 36); color: aliceblue; text-align: center;">
+        <h2 id="headerName">John Doe</h2>
+        <!-- <p>Some text..</p> -->
+      </div>
+
+<div class="row">
+  <div class="column1" style="background-color:#aaa;">
+    <div style="background-image: url('ImageLocation');background-size: cover; height:480px; padding-top:80px;">
+        <h2 id="candidateName" class="profile-section-header">User Name</h2>
+        <div class="profile-section">
+            <!-- <form action="/upload-resume" method="post" enctype="multipart/form-data">
+              <label for="resume-upload">Upload Resume:</label>
+              <input type="file" name="resume" id="resume-upload">
+              <button type="submit">Submit</button>
+            </form> -->
+
+            <h3>Skills</h3>
+            <p id="skills">Python, HTML, ...</p>
+          </div>
+      </div>
+  </div>
+  <div class="column2" style="background-color:#bbb;">
+    <!-- <h2>Column 2</h2>
+    <p>Some text..</p> -->
+    <!-- <div>
+        <object data="test.pdf" type="application/pdf" width="300" height="200">
+            alt : <a href="Sejal Jagtap Resume.pdf">Sejal Jagtap Resume.pdf</a>
+        </object>
+    </div> -->
+    <div>
+        <iframe id="pdfHolder" src="sejal_jagtap_resume.pdf" style="width:100%;height:700px;"></iframe>
+      </div>
+      <div>
+        <!-- I agree button -->
+      </div>
+  </div>
+  <div class="column3" style="background-color:#ccc;">
+    <h2>Applied for</h2>
+    <p id="jobTitle">Software Development Engieer I
+        <p>Google Inc.,<p>
+    </p>
+    <br>
+    <br>
+    <!-- <row style="background-color:rgb(91, 94, 96) height:300"> Job Description</div> -->
+    <h2>Job Desscription</h2>
+    <p id="jobDesc">We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day.</p>
+    <br>
+    
+
+    <br>
+    <button type="submit" class="button button2"><a href="contactCandidate.html">Contact Candidate</a></button>
+  </div>
+</div>
+
+</body>
+
+</html>

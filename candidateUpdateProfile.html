@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="profile.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type='module' src="candidateUpdate.js"></script>
+</head>
+<body>
+
+    <div class="row" style="background-color:rgb(9, 7, 36); color: aliceblue; text-align: center;">
+        <h2 id="headerName">Sejal</h2>
+      </div>
+
+<div class="row">
+  <div class="column2" style="background-color:#aaa;">
+    <div style="background-image: url('ImageLocation');background-size: cover; height:480px; padding-top:80px;">
+        <h2 id="userName" class="profile-section-header">User Name</h2>
+        <div class="profile-section">
+              <label for="resume-upload">Upload Resume:</label>
+              <input type="file" name="resume" id="resume-upload">
+              <button type="submit" id="updateProfile">Submit</button>
+
+            <h3>Skills</h3>
+            <p id="skills">Python, HTML, ...</p>
+          </div>
+      </div>
+  </div>
+  <div class="column2" style="background-color:#bbb;">
+    <!-- <h2>Column 2</h2>
+    <p>Some text..</p> -->
+    <!-- <div>
+        <object data="test.pdf" type="application/pdf" width="300" height="200">
+            alt : <a href="Sejal Jagtap Resume.pdf">Sejal Jagtap Resume.pdf</a>
+        </object>
+    </div> -->
+    <div>
+        <iframe id="resumeDisplay" src="Sejal Jagtap Resume.pdf" style="width:100%;height:700px;"></iframe>
+      </div>
+      <div>
+        <!-- I agree button -->
+      </div>
+  </div>
+  <!-- div class="column3" style="background-color:#ccc;">
+    < <video width="100%" height="300px"
+        controls="controls"/>
+         
+        <source src="vid.mp4"
+            type="video/mp4">
+    </video> >
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div -->
+</div>
+
+</body>
+</html>

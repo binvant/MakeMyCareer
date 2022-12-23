@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="profile.css">
+<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="module" src="recruiter_homepage.js"></script>
+
+
+
+</head>
+<body>
+
+    <div class="row" style="background-color:rgb(9, 7, 36); color: aliceblue; text-align: center; height:50px;">
+      <p id="titleName" style=" text-align: right; padding-top:15px; padding-right:10px;"> Hi, Recruiter Name </p>
+      </div>
+
+<div class="row">
+  <div class="column1" style="background-color:#aaa;">
+    <div style="background-image: url('ImageLocation');background-size: cover; height:480px; padding-top:80px;">
+        <h2 id="recruiterName" class="profile-section-header">Recruiter Name</h2>
+        <div class="profile-section" style="background-color:rgb(207, 205, 205); ">
+          <p>Recruiter's Bio</p>
+          <div id="recruiterBio"></div>
+          </div>
+      </div>
+      <div>
+        <!-- <button type="submit" onclick='CreateJobRole()' style="margin:100px;;">Create a new job role</button> -->
+        <button type="submit"><a href="post_job.html">Create a new job role</a></button>
+      </div>
+  </div>
+  <div class="column2" style="background-color:#bbb;">
+    <div>
+      <div style="background-color:grey; width:745px;">
+        <h3 style="text-align: center;"> Job Postings </h3>
+      </div>
+      <div id="jobList"></div>
+      
+    </div>
+   </div>
+  <div class="column3" style="background-color:#ccc;">
+    <div style="background-color:#aaa; height:50%;">
+    <div style="background-color:grey;">
+    <h3 style="text-align: center;">Candidate Applied</h3>
+    <div id="candidateApplied"></div>
+    <div id="candidateList"></div>
+    <!-- a href="recruiter_candidate.html"><h4>John Doe</h4></a>
+    <a href="recruiter_candidate.html"><h4>John Doe</h4></a --> 
+    </div>
+  </div>
+    
+  <div style="background-color:#aaa; height:46%;">
+    <div style="background-color:grey;">
+    <h3 style="text-align: center;">Suggested Candidates</h3>
+    <div id="candidateSuggested"></div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
